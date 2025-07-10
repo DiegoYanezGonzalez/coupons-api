@@ -24,11 +24,11 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
-      - name: Run tests with coverage
+      - name: Ejecutar pruebas
         run: |
-          pip install coverage
-          coverage run -m pytest
-          coverage html
+             pip install coverage
+             coverage run -m pytest
+             coverage html
 
       - name : upload coverage report artifact
         uses: actions/upload-artifact@v4
