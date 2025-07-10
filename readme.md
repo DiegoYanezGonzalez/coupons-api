@@ -1,7 +1,3 @@
-📄 README.md (Professional & Complete)
-markdown
-Copiar
-Editar
 # 🏷️ Coupon Discount API
 
 A simple yet complete REST API built with **Python** and **Flask** to apply discount coupons and calculate the final price including tax. It includes a business logic layer, unit tests, a simulated regression scenario, and continuous integration via **GitHub Actions**.
