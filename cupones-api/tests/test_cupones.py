@@ -4,6 +4,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from app.cupones import aplicar_cupon, calcular_precio_final
 
+
 def test_descuento_oferta10():
     assert aplicar_cupon(100, "OFERTA10") == 90.0
 
