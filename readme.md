@@ -44,24 +44,21 @@ Editar
 
 ### 1. Clone the repository
 
-```bash
+
 git clone https://github.com/your-username/cupones-api.git
 cd cupones-api
 2. Create and activate virtual environment
 bash
-Copiar
-Editar
+
 python3 -m venv venv
 source venv/bin/activate  # for macOS/Linux
 3. Install required packages
 bash
-Copiar
-Editar
+
 pip install -r requirements.txt
 4. Run the Flask API locally
 bash
-Copiar
-Editar
+
 python app/api.py
 The API will be available at http://localhost:5000/precio.
 
@@ -70,8 +67,7 @@ The API will be available at http://localhost:5000/precio.
 Request example:
 
 json
-Copiar
-Editar
+
 {
   "precio": 100,
   "cupon": "OFERTA10",
@@ -80,8 +76,7 @@ Editar
 Response:
 
 json
-Copiar
-Editar
+
 {
   "precio_final": 107.1
 }
@@ -89,14 +84,12 @@ Editar
 To run all tests:
 
 bash
-Copiar
-Editar
+
 pytest
 If you face import issues, use:
 
 bash
-Copiar
-Editar
+
 PYTHONPATH=. pytest
 The tests include:
 
@@ -112,15 +105,13 @@ Open app/cupones.py.
 Remove one coupon from the dictionary:
 
 python
-Copiar
-Editar
+
 # Removed this line (by mistake)
 "BIENVENIDA": 0.15
 Run the tests:
 
 bash
-Copiar
-Editar
+
 pytest
 ✅ You'll see a failure in the test that checks the "BIENVENIDA" coupon — this is a regression.
 
@@ -128,14 +119,12 @@ pytest
 Add the removed coupon back in cupones.py:
 
 python
-Copiar
-Editar
+
 "BIENVENIDA": 0.15
 Re-run the tests:
 
 bash
-Copiar
-Editar
+
 pytest
 ✅ All tests should pass again.
 
@@ -146,8 +135,7 @@ Setup:
 Create the file .github/workflows/test-regresion.yml with:
 
 yaml
-Copiar
-Editar
+
 name: Regression Tests - Coupons
 
 on:
@@ -178,11 +166,11 @@ jobs:
         run: |
           source venv/bin/activate
           pytest
+          
 Commit and push to GitHub:
 
 bash
-Copiar
-Editar
+
 git add .
 git commit -m "Add CI workflow for regression testing"
 git push origin main
@@ -191,8 +179,7 @@ Go to the Actions tab in GitHub to see your CI workflow running.
 🧪 Sample Tests (unit + integration)
 tests/test_cupones.py
 python
-Copiar
-Editar
+
 from app.cupones import aplicar_cupon, calcular_precio_final
 
 def test_discount_oferta10():
@@ -208,8 +195,7 @@ def test_price_with_tax():
     assert calcular_precio_final(100, "OFERTA10") == 107.1
 tests/test_api.py
 python
-Copiar
-Editar
+
 import json
 from app.api import app
 
